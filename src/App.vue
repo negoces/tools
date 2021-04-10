@@ -1,32 +1,78 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+  <v-app>
+    <v-app-bar app color="deep-purple accent-4" dense dark>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-toolbar-title>{{ title }}</v-toolbar-title>
+    </v-app-bar>
+    <v-navigation-drawer
+      v-model="drawer"
+      absolute
+      temporary
+      class="deep-purple accent-4"
+      dark
+    >
+      <v-list nav dense>
+        <v-list-item>
+          <v-list-item-content>
+            <v-list-item-title class="title">
+              NEGOCES's Tools
+            </v-list-item-title>
+            <v-list-item-subtitle> tools.negoces.top </v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+        <v-divider></v-divider>
+        <v-list-item-group v-model="group">
+          <v-list-item
+            :to="{ path: '/' }"
+            @click="
+              {
+                title = '首页';
+              }
+            "
+          >
+            <v-list-item-title> 首页 </v-list-item-title>
+          </v-list-item>
+
+          <v-list-item
+            :to="{ path: '/getmcs' }"
+            @click="
+              {
+                title = 'Get MCS';
+              }
+            "
+          >
+            <v-list-item-title> Get MCS </v-list-item-title>
+          </v-list-item>
+
+          <v-list-item disabled>
+            <v-list-item-title> QR Code (WIP) </v-list-item-title>
+          </v-list-item>
+
+          <v-list-item disabled>
+            <v-list-item-title> Base64 (WIP) </v-list-item-title>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
+    <router-view style="margin-top: 48px"></router-view>
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+export default {
+  name: "App",
+  data: () => ({
+    drawer: false,
+    title: "Tools",
+    //
+  }),
+};
+</script>
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+html,
+body {
+  font-family: "Noto Sans", sans-serif;
 }
 </style>
