@@ -20,6 +20,11 @@ const routes = [
     name: "QRCode",
     component: () => import("../views/qrcode.vue"),
   },
+  {
+    path: "/base64",
+    name: "Base64",
+    component: () => import("../views/base64.vue"),
+  },
 ];
 
 const router = new VueRouter({

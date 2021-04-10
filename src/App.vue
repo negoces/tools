@@ -55,8 +55,15 @@
             <v-list-item-title> QR Code </v-list-item-title>
           </v-list-item>
 
-          <v-list-item disabled>
-            <v-list-item-title> Base64 (WIP) </v-list-item-title>
+          <v-list-item
+            :to="{ path: '/base64' }"
+            @click="
+              {
+                title = 'Base64';
+              }
+            "
+          >
+            <v-list-item-title> Base64 </v-list-item-title>
           </v-list-item>
         </v-list-item-group>
       </v-list>
