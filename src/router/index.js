@@ -15,6 +15,11 @@ const routes = [
     name: "Getmcs",
     component: () => import("../views/Getmcs.vue"),
   },
+  {
+    path: "/qrcode",
+    name: "QRCode",
+    component: () => import("../views/qrcode.vue"),
+  },
 ];
 
 const router = new VueRouter({

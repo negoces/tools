@@ -6,7 +6,7 @@
     </v-app-bar>
     <v-navigation-drawer
       v-model="drawer"
-      absolute
+      fixed
       temporary
       class="deep-purple accent-4"
       dark
@@ -44,8 +44,15 @@
             <v-list-item-title> Get MCS </v-list-item-title>
           </v-list-item>
 
-          <v-list-item disabled>
-            <v-list-item-title> QR Code (WIP) </v-list-item-title>
+          <v-list-item
+            :to="{ path: '/qrcode' }"
+            @click="
+              {
+                title = 'QRCode';
+              }
+            "
+          >
+            <v-list-item-title> QR Code </v-list-item-title>
           </v-list-item>
 
           <v-list-item disabled>
