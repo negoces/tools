@@ -1,0 +1,11 @@
+{
+    "name": "Tools",
+    "short_name": "Tools",
+    "start_url": ".",
+    "display": "standalone",
+    "lang": "zh-CN",
+    "background_color": "#424242",
+    "description": "Some Tools.",
+    "icons": [],
+    "theme_color": "#424242"
+}

@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app color="deep-purple accent-4" dense dark>
+    <v-app-bar app color="grey darken-3" dense dark>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>{{ title }}</v-toolbar-title>
     </v-app-bar>
@@ -8,7 +8,7 @@
       v-model="drawer"
       fixed
       temporary
-      class="deep-purple accent-4"
+      class="grey darken-3"
       dark
     >
       <v-list nav dense>
